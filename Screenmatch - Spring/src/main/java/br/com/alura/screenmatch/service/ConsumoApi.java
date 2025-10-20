@@ -6,7 +6,7 @@ import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
-
+//ConsumoApi → é o serviço que faz a requisição HTTP, ou seja, puxa os dados da internet.
 public class ConsumoApi {
 
     public String obterDados(String endereco){

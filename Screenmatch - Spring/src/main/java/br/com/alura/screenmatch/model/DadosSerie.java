@@ -7,11 +7,10 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 // JsonIgnoreproperties serve para igonorar oq não é relevante no link (de minha escolha)
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-public record DadosSerie (@JsonAlias("title")String titulo,
+public record DadosSerie (
 
-                         @JsonAlias("Episode")Integer numero,
-
-                         @JsonAlias("imdbRating")String avaliacao,
-
-                         @JsonAlias("Released")String dataLancamento) {
+        @JsonAlias("Title") String titulo,
+        @JsonAlias("totalSeasons") Integer totalTemporadas,
+        @JsonAlias("imdbRating") String avaliacao,
+        @JsonAlias("Released") String dataLancamento) {
 }

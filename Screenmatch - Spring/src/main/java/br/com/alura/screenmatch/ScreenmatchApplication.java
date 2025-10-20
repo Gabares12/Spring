@@ -1,9 +1,13 @@
 package br.com.alura.screenmatch;
 
-import br.com.alura.screenmatch.service.ConsumoApi;
+import br.com.alura.screenmatch.model.DadosTemporada;
+import br.com.alura.screenmatch.principal.Principal;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
 @SpringBootApplication
@@ -16,8 +20,16 @@ public class ScreenmatchApplication implements CommandLineRunner {
     //quando implementar o methodo
     @Override
     public void run(String... args) throws Exception {
-        ConsumoApi consumoApi = new ConsumoApi();
-        String json = consumoApi.obterDados("https://www.omdbapi.com/?t=gilmore+girls&apikey=6585022c");
-        System.out.println(json);
+        Principal principal = new Principal();
+        principal.exibirMneu();
+
+//        Aqui eu tô criando uma lista vazia pra guardar todas as temporadas da série.
+//        Essa lista vai guardar vários objetos do tipo DadosTemporada
+
+
+
+//
+
+
     }
 }

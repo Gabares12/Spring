@@ -2,13 +2,15 @@ package br.com.alura.screenmatch.model;
 
 import com.fasterxml.jackson.annotation.JsonAlias;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-
+//O record é tipo uma classe simplificada que já cria os getters e o construtor automaticamente.
+// JsonAlias serve para selecionar oq é para aparecer
+// JsonIgnoreproperties serve para igonorar oq não é relevante no link (de minha escolha)
 @JsonIgnoreProperties(ignoreUnknown = true)
-public record DadosEpisodio(@JsonAlias("Title") String titulo,
+public record DadosEpisodio(
 
-                            @JsonAlias("Episode") Integer numero,
+        @JsonAlias("Title") String titulo,
+        @JsonAlias("Episode") Integer numero,
+        @JsonAlias("imdbRating") String avaliacao,
+        @JsonAlias("Released") String dataLancamento){
 
-                            @JsonAlias("imdbRating") String avaliacao,
-
-                            @JsonAlias("Released") String dataLancamento) {
 }
