@@ -21,15 +21,6 @@ public class ScreenmatchApplication implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
         Principal principal = new Principal();
-        principal.exibirMneu();
-
-//        Aqui eu tô criando uma lista vazia pra guardar todas as temporadas da série.
-//        Essa lista vai guardar vários objetos do tipo DadosTemporada
-
-
-
-//
-
-
+        principal.exibirMenu();
     }
 }
