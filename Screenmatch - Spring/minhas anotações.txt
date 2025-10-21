@@ -1,0 +1,49 @@
+
+import com.fasterxml.jackson.annotation.JsonAlias;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+// JsonAlias serve para selecionar oq é para aparecer
+// JsonIgnoreproperties serve para igonorar oq não é relevante no link (de minha escolha)
+
+@JsonIgnoreProperties(ignoreUnknown = true)
+public record DadosSerie (
+
+        @JsonAlias("Title") String titulo,
+        @JsonAlias("totalSeasons") Integer totalTemporadas,
+        @JsonAlias("imdbRating") String avaliacao,
+        @JsonAlias("Released") String dataLancamento) {
+}
+==========================================================================================================
+Stream - manipulação de lista de forma concisa
+
+.SORTED() - serve para ordenar em ordem alfabetica
+
+.limit(3) - serve para limitar a lista a 3 itens ou quantos eu quiser (tiver)
+
+.filter - (n -> n.startsWith("N) nesse exemplo , este comando é usado para
+
+"Filtrar" os nomes que começam com "N" exibir apenas eles. mas podem ser usadas outras letras.
+
+.map(n -> n.toUpperCase()) - serve para deixar em letras MAIUSCULAS - especificamente "n -> n.toUpperCase()"
+
+.flatMap - serve para pegar uma lista e adicionar outra dentro dela, podendo exibir por ex: 2 listas juntas |||||| não entendi mt bem a diferença
+
+.collect(Collectors.toList()) - serve para adicionar uma lista na outra ||||||  não entendi mt bem a diferença
+
+.ForEach - permite executar uma ação em cada elemento da stream. por exemplo,
+imprimir cada elemento da lista
+
+
+ex:
+nomes = Arrays.asList("Jacque", "Iasmin", "Paulo", "Rodrigo", "Nico");
+
+nomes.stream()
+               .sorted()
+               .limit(3)
+               .filter(n -> n.startsWith("N"))
+               .map(n -> n.toUpperCase())
+               .forEach(System.out::println);
+
+
+
+==========================================================================================================
